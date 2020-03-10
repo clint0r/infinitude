@@ -6,8 +6,7 @@ RUN apt-get update && apt-get -y upgrade \
     && chmod +x /infinitude/infinitude \
     && cd /infinitude \
     && cpanm Mojolicious::Lite CHI DateTime Try::Tiny Path::Tiny JSON IO::Termios
-WORKDIR /home/infadmin/inf
-COPY . /
 #COPY ./entrypoint.sh /
+COPY entrypoint.sh /
 EXPOSE 3000
 ENTRYPOINT /entrypoint.sh
